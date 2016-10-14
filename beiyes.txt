@@ -1,0 +1,14 @@
+25 High No Fair No  
+25 High No Excellent No  
+33 High No Fair Yes  
+41 Medium No Fair Yes       
+41 Low Yes Fair Yes  
+41 Low Yes Excellent No  
+33 Low Yes Excellent Yes  
+25 Medium No Fair No  
+25 Low Yes Fair Yes  
+41 Medium Yes Fair Yes  
+25 Medium Yes Excellent Yes  
+33 Medium No Excellent Yes  
+33 High Yes Fair Yes  
+41 Medium No Excellent No
