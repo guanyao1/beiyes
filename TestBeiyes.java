@@ -1,32 +1,32 @@
-package beiyes;
+package bayes;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public class TestBeiyes {
+public class TestBayes {
 	/**
-	 * ÆÓËØ±´Ò¶Ë¹Ëã·¨ Ëã·¨µÄË¼Ïë
+	 * æœ´ç´ è´å¶æ–¯ç®—æ³• ç®—æ³•çš„æ€æƒ³
 	 */
 	public static ArrayList<JavaBean> list = new ArrayList<JavaBean>();;
 	static int data_length = 0;
 
 	public static void main(String[] args) {
-		// 1.¶ÁÈ¡Êı¾İ£¬·ÅÈëlistÈİÆ÷ÖĞ
+		// 1.è¯»å–æ•°æ®ï¼Œæ”¾å…¥listå®¹å™¨ä¸­
 		File file = new File("C:\\Users\\wang4\\Desktop\\beiyes.txt");
 		txt2String(file);
-		// Êı¾İ²âÊÔÑù±¾
+		// æ•°æ®æµ‹è¯•æ ·æœ¬
 		testData(25, "Medium", "Yes", "Fair");
 	}
 
-	// ¶ÁÈ¡Ñù±¾Êı¾İ
+	// è¯»å–æ ·æœ¬æ•°æ®
 	public static void txt2String(File file) {
 
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(file));// ¹¹ÔìÒ»¸öBufferedReaderÀàÀ´¶ÁÈ¡ÎÄ¼ş
+			BufferedReader br = new BufferedReader(new FileReader(file));// æ„é€ ä¸€ä¸ªBufferedReaderç±»æ¥è¯»å–æ–‡ä»¶
 			String s = null;
-			while ((s = br.readLine()) != null) {// Ê¹ÓÃreadLine·½·¨£¬Ò»´Î¶ÁÒ»ĞĞ
+			while ((s = br.readLine()) != null) {// ä½¿ç”¨readLineæ–¹æ³•ï¼Œä¸€æ¬¡è¯»ä¸€è¡Œ
 				data_length++;
 				splitt(s);
 			}
@@ -37,7 +37,7 @@ public class TestBeiyes {
 
 	}
 
-	// ´æÈëArrayListÖĞ
+	// å­˜å…¥ArrayListä¸­
 	public static void splitt(String str) {
 
 		String strr = str.trim();
@@ -48,13 +48,13 @@ public class TestBeiyes {
 
 	}
 
-	// ÑµÁ·Ñù±¾£¬²âÊÔ
+	// è®­ç»ƒæ ·æœ¬ï¼Œæµ‹è¯•
 	public static void testData(int age, String a, String b, String c) {
-		// ÑµÁ·Ñù±¾
+		// è®­ç»ƒæ ·æœ¬
 		int number_yes = 0;
 		int bumber_no = 0;
 
-		// ageÇé¿ö ¸öÊı
+		// ageæƒ…å†µ ä¸ªæ•°
 		int num_age_yes = 0;
 		int num_age_no = 0;
 		// income
@@ -67,7 +67,7 @@ public class TestBeiyes {
 		int num_credit_yes = 0;
 		int num_credit_no = 0;
 
-		// ±éÀúList »ñµÃÊı¾İ
+		// éå†List è·å¾—æ•°æ®
 		for (int i = 0; i < list.size(); i++) {
 			JavaBean bb = list.get(i);
 			if (bb.getBuys_computer().equals("Yes")) { // Yes
@@ -103,27 +103,27 @@ public class TestBeiyes {
 			}
 		}
 
-		System.out.println("¹ºÂòµÄÀúÊ·¸öÊı:" + number_yes);
-		System.out.println("²»ÂòµÄÀúÊ·¸öÊı:" + bumber_no);
+		System.out.println("è´­ä¹°çš„å†å²ä¸ªæ•°:" + number_yes);
+		System.out.println("ä¸ä¹°çš„å†å²ä¸ªæ•°:" + bumber_no);
 
-		System.out.println("¹ºÂò+age:" + num_age_yes);
-		System.out.println("²»Âò+age:" + num_age_no);
+		System.out.println("è´­ä¹°+age:" + num_age_yes);
+		System.out.println("ä¸ä¹°+age:" + num_age_no);
 
-		System.out.println("¹ºÂò+income:" + num_income_yes);
-		System.out.println("²»Âò+income:" + num_income_no);
+		System.out.println("è´­ä¹°+income:" + num_income_yes);
+		System.out.println("ä¸ä¹°+income:" + num_income_no);
 
-		System.out.println("¹ºÂò+stundent:" + num_student_yes);
-		System.out.println("²»Âò+student:" + num_stdent_no);
+		System.out.println("è´­ä¹°+stundent:" + num_student_yes);
+		System.out.println("ä¸ä¹°+student:" + num_stdent_no);
 
-		System.out.println("¹ºÂò+credit:" + num_credit_yes);
-		System.out.println("²»Âò+credit:" + num_credit_no);
+		System.out.println("è´­ä¹°+credit:" + num_credit_yes);
+		System.out.println("ä¸ä¹°+credit:" + num_credit_no);
 
-		// // ¸ÅÂÊÅĞ¶Ï
-		double buy_yes = number_yes * 1.0 / data_length; // ÂòµÄ¸ÅÂÊ
-		double buy_no = bumber_no * 1.0 / data_length; // ²»ÂòµÄ¸ÅÂÊ
-		System.out.println("ÑµÁ·Êı¾İÖĞÂòµÄ¸ÅÂÊ:" + buy_yes);
-		System.out.println("ÑµÁ·Êı¾İÖĞ²»ÂòµÄ¸ÅÂÊ:" + buy_no);
-		// / Î´ÖªÓÃ»§µÄÅĞ¶Ï
+		// // æ¦‚ç‡åˆ¤æ–­
+		double buy_yes = number_yes * 1.0 / data_length; // ä¹°çš„æ¦‚ç‡
+		double buy_no = bumber_no * 1.0 / data_length; // ä¸ä¹°çš„æ¦‚ç‡
+		System.out.println("è®­ç»ƒæ•°æ®ä¸­ä¹°çš„æ¦‚ç‡:" + buy_yes);
+		System.out.println("è®­ç»ƒæ•°æ®ä¸­ä¸ä¹°çš„æ¦‚ç‡:" + buy_no);
+		// / æœªçŸ¥ç”¨æˆ·çš„åˆ¤æ–­
 		double nb_buy_yes = (1.0 * num_age_yes / number_yes)
 				* (1.0 * num_income_yes / number_yes)
 				* (1.0 * num_student_yes / number_yes)
@@ -132,12 +132,12 @@ public class TestBeiyes {
 				* (1.0 * num_income_no / bumber_no)
 				* (1.0 * num_stdent_no / bumber_no)
 				* (1.0 * num_credit_no / bumber_no) * buy_no;
-		System.out.println("ĞÂÓÃ»§ÂòµÄ¸ÅÂÊ:" + nb_buy_yes);
-		System.out.println("ĞÂÓÃ»§²»ÂòµÄ¸ÅÂÊ:" + nb_buy_no);
+		System.out.println("æ–°ç”¨æˆ·ä¹°çš„æ¦‚ç‡:" + nb_buy_yes);
+		System.out.println("æ–°ç”¨æˆ·ä¸ä¹°çš„æ¦‚ç‡:" + nb_buy_no);
 		if (nb_buy_yes > nb_buy_no) {
-			System.out.println("ĞÂÓÃ»§ÂòµÄ¸ÅÂÊ´ó");
+			System.out.println("æ–°ç”¨æˆ·ä¹°çš„æ¦‚ç‡å¤§");
 		} else {
-			System.out.println("ĞÂÓÃ»§²»ÂòµÄ¸ÅÂÊ´ó");
+			System.out.println("æ–°ç”¨æˆ·ä¸ä¹°çš„æ¦‚ç‡å¤§");
 		}
 	}
 }
