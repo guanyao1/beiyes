@@ -1,4 +1,4 @@
-package beiyes;
+package bayes;
 
 public class JavaBean {
 	int age;
