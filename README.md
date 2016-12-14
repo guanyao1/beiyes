@@ -1,2 +1,2 @@
-# beiyes
-beiyes java
+# bayes
+bayes java
